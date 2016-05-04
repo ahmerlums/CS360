@@ -1,0 +1,18 @@
+
+<%= form_for @order do |f| %>
+<p class="ui">Edit Status </p>
+
+  
+
+  
+  <div class="field">
+    <%= f.label "Status" %><br>
+    <%= f.select :status ,['Delivered','Pending']%>
+  </div>
+  
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

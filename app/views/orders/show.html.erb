@@ -1,0 +1,21 @@
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:bookIDs) %>:</strong></dt>
+  <dd><%= @order.bookIDs %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:customerID) %>:</strong></dt>
+  <dd><%= @order.customerID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @order.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dateOrdered) %>:</strong></dt>
+  <dd><%= @order.dateOrdered %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:quantities) %>:</strong></dt>
+  <dd><%= @order.quantities %></dd>
+</dl>
+
+
+<%= link_to 'Back', home_index_url %> <hr>
+

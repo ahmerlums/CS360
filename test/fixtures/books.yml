@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  courseTitle: MyString
+  courseCode: MyString
+  instructor: MyString
+  school: MyString
+  ourPrice: 1
+  canotechPrice: 1
+  numCopies: 1
+  bookTitle: MyString
+  author: MyString
+  edition: MyString
+  dept: MyString
+  comment: MyString
+
+two:
+  courseTitle: MyString
+  courseCode: MyString
+  instructor: MyString
+  school: MyString
+  ourPrice: 1
+  canotechPrice: 1
+  numCopies: 1
+  bookTitle: MyString
+  author: MyString
+  edition: MyString
+  dept: MyString
+  comment: MyString

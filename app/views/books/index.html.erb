@@ -1,0 +1,53 @@
+<%- model_class = Book -%>
+<!--<div class="page-header">-->
+<!--  <h1 class="display-3"><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>-->
+<!--</div>-->
+
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Books</h2>
+          <h3 class="section-subheading text-muted">Largest Online Book Store</h3>
+          </div>
+      </div>
+    </div>
+  </section>
+
+<div class="container">
+  <div class="row previews">
+    <% @books.each do |book| %>
+    <div class="col-lg-4 col-sm-6">
+      <div class="thumbnail">
+        <a href=<%= book_path(book) %> class="post-image-link">
+          <p><img src=<%= book.image %> class="img-responsive"></p>
+          <!---->
+        </a>
+        <div class="caption">
+          <h3><%= book.courseTitle %></h3>
+          <p><%= book.instructor %></p>
+          <a href=<%= book_path(book) %> class="btn btn-primary">Preview</a>
+          <a href=<%= new_order_path + "/" + book.id.to_s %> class="btn btn-default">Purchase</a>
+      </div>
+    </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+<style>
+  .caption{
+    text-align: center;
+  }
+  .btn-primary { 
+    	background-color: #1abc9c !important;
+	}
+	#portfolio {
+	  margin-top: 80px;
+	}
+	.previews{
+	  margin-top: 50px;
+	  margin-bottom: 100px;
+	}
+</style>

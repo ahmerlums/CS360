@@ -1,0 +1,50 @@
+
+
+  <div class="col-xs-5" style="margin-left: -1.5%;">
+    <%= form_tag("/orders/create", method: "post") do %>
+      <div class="form-group">
+        <%= label_tag :name, "Name" %>
+        <%= text_field_tag :name, nil, class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= label_tag :rollno, "Roll number" %>
+        <%= number_field_tag :rollnum, nil, class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= label_tag :mobnum, "Mobile Number" %>
+        <%= text_field_tag :mobnum, nil, class: "form-control" %>
+      </div>
+      
+      <div class="form-group">  
+      <%= label_tag :bookid, "Course Code" %>
+      <% if request.original_url[request.original_url.length-1] == 'w'%>
+        <%=  collection_select :myid,:courseCode, Book.all, :id, :courseCode, include_blank: true %>
+    <% else %>
+     <%= Book.find(request.original_url.split('/')[-1].to_i).courseCode %>
+
+      <% end %>
+      </div>
+      
+      <div class="form-group">  
+        <%= label_tag :bookid, "Instructor" %>
+        <% if request.original_url[request.original_url.length-1] == 'w'%>
+        <%=  collection_select :myid,:instructor, Book.all, :id, :instructor, include_blank: true %>
+            <% else %>
+     <%= Book.find(request.original_url.split('/')[-1].to_i).instructor %>
+
+      <% end %>
+     
+      </div>
+      
+      <div class="form-group">
+        <%= label_tag :quantities, "Quantities" %>
+        <%= text_field_tag :quantities, nil, class: "form-control" %>
+      </div>
+      
+      
+      <%= submit_tag "Submit", class: "btn btn-default" %>
+    <% end %>
+  </div>
+

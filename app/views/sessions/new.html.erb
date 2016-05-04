@@ -1,0 +1,17 @@
+
+        <h1> Welcome to admin's page</h1>
+        <% if current_admin %> 
+          <ul> 
+            <li><%= current_admin.email %></li> 
+            <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+          </ul> 
+        <% end %>
+
+<%= form_for(:session, url: login_path) do |f| %> 
+<% if flash[:notice] %>
+    <div><%= flash[:notice] %></div>
+    <% end %>
+  <%= f.email_field :email, :placeholder => "Email" %> 
+  <%= f.password_field :password, :placeholder => "Password" %> 
+  <%= f.submit "Log in", class: "btn-submit" %>
+<% end %>
